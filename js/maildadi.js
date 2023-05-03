@@ -15,24 +15,33 @@ function() {
     
     const emailInserita = document.querySelector('input').value;
 
-  
-// controlla che sia nella lista di chi può accedere
-        if (emailPresente.includes(emailInserita)) {
-
-            messaggio = "Ciao, bentornato tra noi!"
-            
-        }
-        else {
-
-            messaggio = "Ciao User, non sei registrato, ti invitiamo a farlo!"
-           
-        }
+  for ( let i = 0; i < emailPresente.length; i++) {
 
 
-        //  stampa un messaggio appropriato sull’esito del controllo.
-        const benvenutoMessaggio = document.createElement('h1');
-        benvenutoMessaggio.append(messaggio);
-        container.append(benvenutoMessaggio);
+    const valore = emailPresente[i];
+
+    // controlla che sia nella lista di chi può accedere
+    if (valore === emailInserita) {
+
+        messaggio = "Ciao, bentornato tra noi!"
+        
+    }
+    else {
+
+        messaggio = "Ciao User, non sei registrato, ti invitiamo a farlo!"
+    
+    }
+
+
+    //  stampa un messaggio appropriato sull’esito del controllo.
+    const benvenutoMessaggio = document.createElement('h1');
+    benvenutoMessaggio.append(messaggio);
+    container.append(benvenutoMessaggio);
+
+
+
+  }
+
 
 
     
