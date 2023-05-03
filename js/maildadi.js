@@ -9,7 +9,7 @@ let container = document.getElementById('container');
 
 const button = document.getElementById('myButton');
 
-const flag = false;
+
 
 button.addEventListener('click',
 function() {
