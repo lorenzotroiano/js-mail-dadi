@@ -1,27 +1,52 @@
-
-
+let messaggio;
 
 // Chiedi all’utente la sua email, 
-let inserisciEmail = prompt("Inserisci la tua mail");
+const emailPresente = ["qwerty@libero.it" , "ytrewq@hotmail.it" , "sium@gmail.com" , "giusepperossi@gmail.com"];
 
-const emailRichiesta = ["qwerty@libero.it" , "ytrewq@hotmail.it" , "sium@gmail.com" , "giusepperossi@gmail.com"];
+emailPresente.push('giorgiorossi@libero.it');
 
-emailRichiesta.push('giorgiorossi@libero.it');
-
-// console.log(emailRichiesta);
+let container = document.getElementById('container');
 
 
+const button = document.getElementById('myButton');
 
-
-// controlla che sia nella lista di chi può accedere
-
-for ( let i = 0; i < emailRichiesta.length; i++) {
+button.addEventListener('click',
+function() {
     
-    console.log(emailRichiesta[i]);
+    const emailInserita = document.querySelector('input').value;
+
+  
+// controlla che sia nella lista di chi può accedere
+        if (emailPresente.includes(emailInserita)) {
+
+            messaggio = "Ciao, bentornato tra noi!"
+            
+        }
+        else {
+
+            messaggio = "Ciao User, non sei registrato, ti invitiamo a farlo!"
+           
+        }
 
 
-   
-}
+        //  stampa un messaggio appropriato sull’esito del controllo.
+        const benvenutoMessaggio = document.createElement('h1');
+        benvenutoMessaggio.append(messaggio);
+        container.append(benvenutoMessaggio);
 
-//  stampa un messaggio appropriato sull’esito del controllo.
+
+    
+})
+
+
+
+
+
+
+
+
+
+
+
+
 
